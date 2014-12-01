@@ -1,10 +1,13 @@
 var express = require('express'),
     app = express(),
-    namespace = require('require-namespace');
+    namespace = require('require-namespace'),
+    bodyParser = require('body-parser');
 
 namespace.createSync(__dirname + '/server/controllers/', 'controllers');
 
 var controllers = namespace.controllers;
+
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/client/views/index.html');
