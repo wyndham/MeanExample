@@ -1,0 +1,14 @@
+{
+  "name": "MeanExample",
+  "version": "0.0.0",
+  "description": "Example application using Mean stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "wyndham",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}
