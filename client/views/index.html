@@ -17,9 +17,13 @@
                     {{item.name}}
                 </li>
             </ul>
+            <form ng-submit="createItem()">
+                <input type="text" placeholder="Item name" ng-model="itemName"></input>
+                <button type="submit">Add</button>
+            </form>
         </div>
         
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
         <script type="text/javascript" src="/js/controllers/itemsController.js"></script>
     </body>
 </html>
