@@ -12,6 +12,11 @@
         <!-- Some sort of adjustable list -->
         <div ng-controller="itemsController">
             <h1>There are {{itemsCount}} items</h1>
+            <ul>
+                <li ng-repeat="item in items">
+                    {{item.name}}
+                </li>
+            </ul>
         </div>
         
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
