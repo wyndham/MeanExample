@@ -1,12 +1,14 @@
-app.controller('itemsController', ['$scope', '$resource', function ($scope, $resource) {   
-    $scope.itemsCount = 1;
-
+app.controller('itemsController', ['$scope', '$resource', function ($scope, $resource) {
+    var Item = $resource('/api/items');
+    
     $scope.items = [
         { name : "First item" },
         { name : "Second item" }
     ];
 
     $scope.createItem = function () {
-        $scope.items.push({ name: $scope.itemName });
+        var item = new Item();
+        item.name = $scope.itemName;
+        item.$save();
     };
 }]);
