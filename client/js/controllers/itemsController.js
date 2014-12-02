@@ -1,10 +1,11 @@
 app.controller('itemsController', ['$scope', '$resource', function ($scope, $resource) {
     var Item = $resource('/api/items');
     
-    $scope.items = [
-        { name : "First item" },
-        { name : "Second item" }
-    ];
+    Item.query(function (results){
+        $scope.items = results;
+    });
+    
+    $scope.items = [];
 
     $scope.createItem = function () {
         var item = new Item();

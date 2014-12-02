@@ -6,5 +6,10 @@ module.exports = {
         item.save(function (err, result) {
             res.json(result);
         });
+    },
+    list: function (req, res) {
+        Item.find({}, function (err, results) {
+            res.json(results);   
+        });
     }
 }
