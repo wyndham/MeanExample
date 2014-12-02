@@ -1,5 +1,10 @@
+var Item = require('../models/item');
+
 module.exports = {
     create: function (req, res) {
-        console.log(req.body);
+        var item = new Item(req.body);
+        item.save(function (err, result) {
+            res.json(result);
+        });
     }
 }

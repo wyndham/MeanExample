@@ -1,9 +1,12 @@
 var express = require('express'),
     app = express(),
     namespace = require('require-namespace'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose');
 
 namespace.createSync(__dirname + '/server/controllers/', 'controllers');
+
+mongoose.connect('mongodb://localhost:27017/mean-example');
 
 var controllers = namespace.controllers;
 

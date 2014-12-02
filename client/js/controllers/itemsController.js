@@ -9,6 +9,9 @@ app.controller('itemsController', ['$scope', '$resource', function ($scope, $res
     $scope.createItem = function () {
         var item = new Item();
         item.name = $scope.itemName;
-        item.$save();
+        item.$save(function (result) {
+            $scope.items.push(result);
+            $scope.itemName = '';
+        });
     };
 }]);
