@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="itemApp">
     <head>
+        <link type="text/css" rel="stylesheet" href="/css/styles.css">
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular-resource.min.js"></script>
         <meta charset="utf-8">
@@ -14,12 +15,14 @@
         <!-- Some sort of adjustable list -->
         <div ng-controller="itemsController">
             <h1>There are {{items.length}} items</h1>
-            <ul>
-                <li ng-repeat="item in items">
-                    {{item.name}}
-                    <a href="" ng-click="delete(item.name)">Delete</a>
-                </li>
-            </ul>
+            <div id="itemContainer">
+                <ul>
+                    <li ng-repeat="item in items">
+                        {{item.name}}
+                        <a id="delete" href="" ng-click="delete(item.name)">Delete</a>
+                    </li>
+                </ul>
+            </div>
             <form ng-submit="createItem()">
                 <input type="text" placeholder="Item name" ng-model="itemName"></input>
                 <button type="submit">Add</button>
