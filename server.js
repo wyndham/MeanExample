@@ -21,6 +21,7 @@ app.use('/js/', express.static(__dirname + '/client/js/'));
 //REST API
 app.get('/api/items', controllers.itemsController.list);
 app.post('/api/items', controllers.itemsController.create);
+app.delete('/api/items', controllers.itemsController.delete);
 
 app.listen(3000, function () {
     console.log('I\'m listening');

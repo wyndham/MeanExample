@@ -15,4 +15,16 @@ app.controller('itemsController', ['$scope', '$resource', function ($scope, $res
             $scope.itemName = '';
         });
     };
+    
+    $scope.delete = function (name) {
+        var item = new Item();
+        item.name = name;
+        item.$remove({name: item.name}, function (result) {
+            var oldItems = $scope.items;
+            $scope.items = [];
+            oldItems.forEach(function(thisItem) {
+                if (thisItem.name !== name) $scope.items.push(thisItem);
+            });
+        });
+    };
 }]);
